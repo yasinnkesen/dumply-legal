@@ -1,78 +1,452 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Dumply Privacy Policy</title></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dumply — Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #60A0EF;
+    --blue-dark: #2563EB;
+    --blue-light: #EFF6FF;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(135deg, #60A0EF 0%, #3b82f6 50%, #1d4ed8 100%);
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    color: white;
+    position: relative;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  header p {
+    color: rgba(255,255,255,0.8);
+    font-size: 15px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .wave {
+    display: block;
+    margin-top: -2px;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .toc a:last-child { border-bottom: none; }
+  .toc a:hover { color: var(--blue); }
+  .toc .toc-num { color: var(--muted); margin-right: 8px; font-variant-numeric: tabular-nums; }
+
+  section {
+    margin-bottom: 48px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    width: 36px;
+    height: 36px;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  ul li {
+    font-size: 15px;
+    color: #334155;
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  ul li:last-child { border-bottom: none; }
+
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+
+  ul li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #1e40af;
+    font-weight: 500;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 12px rgba(96,160,239,0.1);
+  }
+
+  .service-icon { font-size: 24px; margin-bottom: 8px; }
+  .service-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .service-desc { font-size: 11px; color: var(--muted); }
+
+  .contact-box {
+    background: linear-gradient(135deg, #60A0EF, #3b82f6);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    color: white;
+  }
+
+  .contact-box h2 { color: white; font-family: 'DM Serif Display', serif; margin-bottom: 8px; }
+  .contact-box p { color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+
+  .contact-email {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s;
+  }
+
+  .contact-email:hover { background: rgba(255,255,255,0.3); }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a { color: var(--blue-dark); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 0; }
+</style>
+</head>
 <body>
-<h1>Dumply Privacy Policy</h1>
-DUMPLY Privacy Policy
 
-Your Privacy Matters
+<header>
+  <div class="logo">
+    <div class="logo-icon">📋</div>
+    <span class="logo-text">Dumply</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: March 12, 2026</p>
+</header>
 
-Last updated: March 12, 2026
+<svg class="wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#f8fafc;">
+  <path d="M0,40 C360,0 1080,0 1440,40 L1440,0 L0,0 Z" fill="#1d4ed8"/>
+</svg>
 
-DUMPLY ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the DUMPLY mobile application.
+<main>
 
-1. Information We Collect
+  <div class="toc">
+    <p class="toc-title">Table of Contents</p>
+    <a href="#s1"><span class="toc-num">01</span> Information We Collect</a>
+    <a href="#s2"><span class="toc-num">02</span> How We Use Your Information</a>
+    <a href="#s3"><span class="toc-num">03</span> Third-Party Services</a>
+    <a href="#s4"><span class="toc-num">04</span> Data Storage & Security</a>
+    <a href="#s5"><span class="toc-num">05</span> Data Retention</a>
+    <a href="#s6"><span class="toc-num">06</span> Your Rights</a>
+    <a href="#s7"><span class="toc-num">07</span> Children's Privacy</a>
+    <a href="#s8"><span class="toc-num">08</span> Changes to This Policy</a>
+    <a href="#s9"><span class="toc-num">09</span> Contact Us</a>
+  </div>
 
-We collect only the information necessary to provide our services:
+  <p>DUMPLY ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the DUMPLY mobile application.</p>
 
-Account Information — When you sign in with Google, we receive your name and email address.
-Task & Note Data — The tasks, notes, and categories you create within the app.
-Voice Data — When you use the voice assistant feature, your voice is temporarily processed by Deepgram (a third-party speech-to-text service) to convert speech to text. We do not store raw audio recordings.
-Usage Data — Basic usage statistics such as task completion counts, stored to power your in-app statistics.
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Information We Collect</h2>
+    </div>
+    <p>We collect only the information necessary to provide our services:</p>
+    <ul>
+      <li><strong>Account Information</strong> — When you sign in with Google, we receive your name and email address.</li>
+      <li><strong>Task & Note Data</strong> — The tasks, notes, and categories you create within the app.</li>
+      <li><strong>Voice Data</strong> — When you use the voice assistant feature, your voice is temporarily processed by Deepgram for speech-to-text conversion. We do not store raw audio recordings.</li>
+      <li><strong>Usage Data</strong> — Basic usage statistics such as task completion counts, stored to power your in-app statistics.</li>
+    </ul>
+  </section>
 
-2. How We Use Your Information
+  <hr>
 
-Your data is used solely to provide and improve the DUMPLY app experience:
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>How We Use Your Information</h2>
+    </div>
+    <p>Your data is used solely to provide and improve the DUMPLY app experience:</p>
+    <ul>
+      <li>To authenticate you and maintain your account</li>
+      <li>To store and sync your tasks, notes, and categories across sessions</li>
+      <li>To process voice commands and convert them to actionable tasks or notes</li>
+      <li>To display your personal productivity statistics within the app</li>
+    </ul>
+    <div class="highlight-box">We do not sell, rent, or share your personal data with third parties for marketing purposes.</div>
+  </section>
 
-To authenticate you and maintain your account
-To store and sync your tasks, notes, and categories across sessions
-To process voice commands and convert them to actionable tasks or notes
-To display your personal productivity statistics within the app
+  <hr>
 
-We do not sell, rent, or share your personal data with third parties for marketing purposes.
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>DUMPLY uses the following third-party services, each governed by their own privacy policies:</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🗄️</div>
+        <div class="service-name">Supabase</div>
+        <div class="service-desc">Database & authentication</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔐</div>
+        <div class="service-name">Google Sign-In</div>
+        <div class="service-desc">Authentication provider</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎙️</div>
+        <div class="service-name">Deepgram</div>
+        <div class="service-desc">Speech-to-text processing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-name">OpenAI</div>
+        <div class="service-desc">AI voice command processing</div>
+      </div>
+    </div>
+  </section>
 
-3. Third-Party Services
+  <hr>
 
-DUMPLY uses the following third-party services, each governed by their own privacy policies:
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>Data Storage & Security</h2>
+    </div>
+    <p>Your data is stored securely on Supabase servers. We implement industry-standard security measures including encrypted connections (HTTPS/TLS) and row-level security policies to ensure only you can access your data.</p>
+    <div class="highlight-box">Voice input is processed in real-time and is not stored as audio on our servers.</div>
+  </section>
 
-Supabase — Database and authentication infrastructure. Privacy Policy
-Google Sign-In — Authentication provider. Privacy Policy
-Deepgram — Speech-to-text processing for voice commands. Privacy Policy
-OpenAI — AI processing for understanding voice commands. Privacy Policy
+  <hr>
 
-4. Data Storage & Security
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Data Retention</h2>
+    </div>
+    <p>Your data is retained for as long as your account is active. You may request deletion of your account and associated data at any time by contacting us at the email below.</p>
+  </section>
 
-Your data is stored securely on Supabase servers. We implement industry-standard security measures including encrypted connections (HTTPS/TLS) and row-level security policies to ensure only you can access your data.
+  <hr>
 
-Voice input is processed in real-time and is not stored as audio on our servers.
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li>The right to access the data we hold about you</li>
+      <li>The right to correct inaccurate data</li>
+      <li>The right to request deletion of your data</li>
+      <li>The right to data portability</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <strong>dumplyofficial@gmail.com</strong></p>
+  </section>
 
-5. Data Retention
+  <hr>
 
-Your data is retained for as long as your account is active. You may request deletion of your account and associated data at any time by contacting us at the email below.
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>DUMPLY is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+  </section>
 
-6. Your Rights
+  <hr>
 
-Depending on your location, you may have the following rights regarding your personal data:
+  <section id="s8">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  </section>
 
-The right to access the data we hold about you
-The right to correct inaccurate data
-The right to request deletion of your data
-The right to data portability
+  <hr style="margin-bottom: 48px;">
 
-To exercise any of these rights, please contact us at dumplyofficial@gmail.com
+  <div class="contact-box" id="s9">
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please reach out.</p>
+    <a href="mailto:dumplyofficial@gmail.com" class="contact-email">📧 dumplyofficial@gmail.com</a>
+  </div>
 
-7. Children's Privacy
+</main>
 
-DUMPLY is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.
+<footer>
+  <p>© 2026 Dumply. All rights reserved. &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+</footer>
 
-8. Changes to This Policy
-
-We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.
-
-9. Contact Us
-
-If you have any questions about this Privacy Policy, please contact us at:
-
-📧 dumplyofficial@gmail.com
 </body>
 </html>

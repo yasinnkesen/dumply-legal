@@ -1,95 +1,460 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Dumply Terms of Service</title></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dumply — Terms of Service</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #60A0EF;
+    --blue-dark: #2563EB;
+    --blue-light: #EFF6FF;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%, rgba(96,160,239,0.15) 0%, transparent 60%);
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    color: white;
+    position: relative;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  header p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .wave { display: block; margin-top: -2px; }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .toc a:last-child { border-bottom: none; }
+  .toc a:hover { color: var(--blue); }
+  .toc .toc-num { color: var(--muted); margin-right: 8px; }
+
+  section {
+    margin-bottom: 48px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    width: 36px;
+    height: 36px;
+    background: #f1f5f9;
+    color: var(--text);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  ul li {
+    font-size: 15px;
+    color: #334155;
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  ul li:last-child { border-bottom: none; }
+
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #94a3b8;
+    border-radius: 50%;
+  }
+
+  .warning-box {
+    background: #fff7ed;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #92400e;
+    font-weight: 500;
+  }
+
+  .info-box {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #1e40af;
+    font-weight: 500;
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, #0f172a, #1e3a5f);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    color: white;
+  }
+
+  .contact-box h2 { color: white; font-family: 'DM Serif Display', serif; margin-bottom: 8px; }
+  .contact-box p { color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+
+  .contact-email {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 10px 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.2s;
+  }
+
+  .contact-email:hover { background: rgba(255,255,255,0.2); }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a { color: var(--blue-dark); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 0; }
+</style>
+</head>
 <body>
-<h1>Dumply Terms of Service</h1>
-DUMPLY Terms of Service
 
-Terms of Service
+<header>
+  <div class="logo">
+    <div class="logo-icon">📋</div>
+    <span class="logo-text">Dumply</span>
+  </div>
+  <h1>Terms of Service</h1>
+  <p>Last updated: March 12, 2026</p>
+</header>
 
-Last updated: March 12, 2026
+<svg class="wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#f8fafc;">
+  <path d="M0,40 C360,0 1080,0 1440,40 L1440,0 L0,0 Z" fill="#1e3a5f"/>
+</svg>
 
-By downloading or using DUMPLY, you agree to be bound by these Terms of Service. Please read them carefully before using the app.
+<main>
 
-1. Acceptance of Terms
+  <div class="toc">
+    <p class="toc-title">Table of Contents</p>
+    <a href="#s1"><span class="toc-num">01</span> Acceptance of Terms</a>
+    <a href="#s2"><span class="toc-num">02</span> Description of Service</a>
+    <a href="#s3"><span class="toc-num">03</span> User Accounts</a>
+    <a href="#s4"><span class="toc-num">04</span> Acceptable Use</a>
+    <a href="#s5"><span class="toc-num">05</span> Voice & AI Features</a>
+    <a href="#s6"><span class="toc-num">06</span> Your Content</a>
+    <a href="#s7"><span class="toc-num">07</span> Availability & Modifications</a>
+    <a href="#s8"><span class="toc-num">08</span> Disclaimer of Warranties</a>
+    <a href="#s9"><span class="toc-num">09</span> Limitation of Liability</a>
+    <a href="#s10"><span class="toc-num">10</span> Third-Party Services</a>
+    <a href="#s11"><span class="toc-num">11</span> Termination</a>
+    <a href="#s12"><span class="toc-num">12</span> Governing Law</a>
+    <a href="#s13"><span class="toc-num">13</span> Contact Us</a>
+  </div>
 
-These Terms of Service ("Terms") govern your use of the DUMPLY mobile application ("App") operated by DUMPLY ("we", "us", or "our"). By accessing or using our App, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not use the App.
+  <p>By downloading or using DUMPLY, you agree to be bound by these Terms of Service. Please read them carefully before using the app.</p>
 
-2. Description of Service
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Acceptance of Terms</h2>
+    </div>
+    <p>These Terms of Service ("Terms") govern your use of the DUMPLY mobile application ("App") operated by DUMPLY ("we", "us", or "our"). By accessing or using our App, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not use the App.</p>
+  </section>
 
-DUMPLY is a voice-powered task and note management application that allows you to:
+  <hr>
 
-Create, manage, and organize tasks using voice or text input
-Create and categorize notes
-View productivity statistics and insights
-Use AI-powered voice commands to interact with your data
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Description of Service</h2>
+    </div>
+    <p>DUMPLY is a voice-powered task and note management application that allows you to:</p>
+    <ul>
+      <li>Create, manage, and organize tasks using voice or text input</li>
+      <li>Create and categorize notes</li>
+      <li>View productivity statistics and insights</li>
+      <li>Use AI-powered voice commands to interact with your data</li>
+    </ul>
+  </section>
 
-3. User Accounts
+  <hr>
 
-To use DUMPLY, you must sign in with a valid Google account. You are responsible for:
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>User Accounts</h2>
+    </div>
+    <p>To use DUMPLY, you must create an account. You are responsible for:</p>
+    <ul>
+      <li>Maintaining the confidentiality of your account credentials</li>
+      <li>All activities that occur under your account</li>
+      <li>Notifying us immediately of any unauthorized use of your account</li>
+    </ul>
+    <p>We reserve the right to terminate accounts that violate these Terms.</p>
+  </section>
 
-Maintaining the confidentiality of your account credentials
-All activities that occur under your account
-Notifying us immediately of any unauthorized use of your account
+  <hr>
 
-We reserve the right to terminate accounts that violate these Terms.
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>Acceptable Use</h2>
+    </div>
+    <p>You agree to use DUMPLY only for lawful purposes. You must not:</p>
+    <ul>
+      <li>Use the App in any way that violates applicable local, national, or international laws</li>
+      <li>Attempt to gain unauthorized access to any part of the App or its infrastructure</li>
+      <li>Transmit any unsolicited or unauthorized advertising material</li>
+      <li>Attempt to reverse engineer, decompile, or disassemble the App</li>
+      <li>Use the App to store or transmit malicious code or harmful content</li>
+    </ul>
+  </section>
 
-4. Acceptable Use
+  <hr>
 
-You agree to use DUMPLY only for lawful purposes. You must not:
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Voice & AI Features</h2>
+    </div>
+    <p>DUMPLY includes a voice assistant powered by third-party AI services (Deepgram and OpenAI). By using these features:</p>
+    <ul>
+      <li>You consent to your voice being processed by Deepgram for speech-to-text conversion</li>
+      <li>You understand that voice commands are processed by OpenAI's API to understand your intent</li>
+      <li>You acknowledge that AI responses may occasionally be inaccurate — always review actions before confirming</li>
+    </ul>
+    <div class="info-box">AI responses are provided for convenience. Always verify important tasks before confirming.</div>
+  </section>
 
-Use the App in any way that violates applicable local, national, or international laws or regulations
-Attempt to gain unauthorized access to any part of the App or its infrastructure
-Transmit any unsolicited or unauthorized advertising material
-Attempt to reverse engineer, decompile, or disassemble the App
-Use the App to store or transmit malicious code or harmful content
+  <hr>
 
-5. Voice & AI Features
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Your Content</h2>
+    </div>
+    <p>You retain full ownership of the content you create in DUMPLY (tasks, notes, categories). By using the App, you grant us a limited license to store and process your content solely for the purpose of providing the service.</p>
+    <div class="info-box">We do not claim ownership of your content and will not use it for any purpose other than operating the App.</div>
+  </section>
 
-DUMPLY includes a voice assistant powered by third-party AI services (Deepgram and OpenAI). By using these features:
+  <hr>
 
-You consent to your voice being processed by Deepgram for speech-to-text conversion
-You understand that voice commands are processed by OpenAI's API to understand your intent
-You acknowledge that AI responses may occasionally be inaccurate — always review actions before confirming
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Availability & Modifications</h2>
+    </div>
+    <p>We strive to keep DUMPLY available at all times, but we do not guarantee uninterrupted access. We reserve the right to:</p>
+    <ul>
+      <li>Modify or discontinue the App (or any part of it) with or without notice</li>
+      <li>Update these Terms at any time — continued use constitutes acceptance</li>
+      <li>Change, add, or remove features</li>
+    </ul>
+  </section>
 
-6. Your Content
+  <hr>
 
-You retain full ownership of the content you create in DUMPLY(tasks, notes, categories). By using the App, you grant us a limited license to store and process your content solely for the purpose of providing the service.
+  <section id="s8">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Disclaimer of Warranties</h2>
+    </div>
+    <div class="warning-box">DUMPLY is provided "as is" and "as available" without warranties of any kind. Use of the App is at your own risk.</div>
+    <p>We do not warrant that the App will be error-free, uninterrupted, or free of viruses or other harmful components.</p>
+  </section>
 
-We do not claim ownership of your content and will not use it for any purpose other than operating the App.
+  <hr>
 
-7. Availability & Modifications
+  <section id="s9">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <h2>Limitation of Liability</h2>
+    </div>
+    <p>To the fullest extent permitted by law, DUMPLY shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of (or inability to use) the App, including but not limited to loss of data, loss of profits, or business interruption.</p>
+  </section>
 
-We strive to keep DUMPLY available at all times, but we do not guarantee uninterrupted access. We reserve the right to:
+  <hr>
 
-Modify or discontinue the App (or any part of it) with or without notice
-Update these Terms at any time — continued use constitutes acceptance
-Change, add, or remove features
+  <section id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>DUMPLY integrates with third-party services including Supabase, Google, Deepgram, and OpenAI. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.</p>
+  </section>
 
-8. Disclaimer of Warranties
+  <hr>
 
-DUMPLY is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the App will be error-free, uninterrupted, or free of viruses or other harmful components. Use of the App is at your own risk.
+  <section id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>Termination</h2>
+    </div>
+    <p>You may stop using DUMPLY at any time. We may suspend or terminate your access if you violate these Terms. Upon termination, your right to use the App ceases immediately. You may request deletion of your data by contacting us.</p>
+  </section>
 
-9. Limitation of Liability
+  <hr>
 
-To the fullest extent permitted by law, DUMPLY shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of (or inability to use) the App, including but not limited to loss of data, loss of profits, or business interruption.
+  <section id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <h2>Governing Law</h2>
+    </div>
+    <p>These Terms shall be governed by and construed in accordance with applicable laws. Any disputes arising from these Terms or your use of the App will be resolved through good-faith negotiation.</p>
+  </section>
 
-10. Third-Party Services
+  <hr style="margin-bottom: 48px;">
 
-DUMPLY integrates with third-party services including Supabase, Google, Deepgram, and OpenAI. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third parties.
+  <div class="contact-box" id="s13">
+    <h2>Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please reach out.</p>
+    <a href="mailto:dumplyofficial@gmail.com" class="contact-email">📧 dumplyofficial@gmail.com</a>
+  </div>
 
-11. Termination
+</main>
 
-You may stop using DUMPLY at any time. We may suspend or terminate your access if you violate these Terms. Upon termination, your right to use the App ceases immediately. You may request deletion of your data by contacting us.
+<footer>
+  <p>© 2026 Dumply. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
 
-12. Governing Law
-
-These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions. Any disputes arising from these Terms or your use of the App will be resolved through good-faith negotiation.
-
-13. Contact Us
-
-If you have any questions about these Terms of Service, please contact us at:
-
-📧 dumplyofficial@gmail.com
 </body>
 </html>
